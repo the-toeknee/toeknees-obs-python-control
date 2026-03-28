@@ -1,4 +1,5 @@
 - TTS Queue System - ADD A COOLDOWN, ALSO LET ME PAUSE IT MANUALLY
+    - Priority for subs, paid, or cheers.
 - Make TTS figure move when TTS is speaking.
 - Move some stuff over from Streamer.bot.
 - If someone jokes about ads, do 30 second ad break.
