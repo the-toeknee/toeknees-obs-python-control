@@ -4,9 +4,9 @@
 
 Meme Generator for Matt.
 
-1. Figure out how to center sources.
-1. Figure out how to listen to chat for matt's first time messages.
-1. Populate with stupid matt messages and images.
+1. ~~Figure out how to center sources.~~
+1. ~~Figure out how to listen to chat for matt's first time messages.~~
+1. ~~Populate with stupid matt messages and images.~~
 
 ## 2026-03-25 | March 25, 2026
 

@@ -1,8 +1,8 @@
 - TTS Queue System - ADD A COOLDOWN, ALSO LET ME PAUSE IT MANUALLY
 - Make TTS figure move when TTS is speaking.
 - Move some stuff over from Streamer.bot.
-- Meme Generator for Matt.
 - If someone jokes about ads, do 30 second ad break.
 - Move over timeout chatter functionality here so that if a mod gets timed out, they get their mod privileges back.
 - Toby Watch... Toby Watch
 - AI LLM reading chat and responding to me
+- ~~Meme Generator for Matt.~~

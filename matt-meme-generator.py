@@ -15,7 +15,7 @@ LOGGER: logging.Logger = logging.getLogger("Matt-Meme-Generator")
 
 # List of top and bottom text and image link.
 MATT = [
-    ("IM MATT", "I'M COOL", "generic_matt.png"),
+    ("IM MATT", "I'M COOL", "matt.png"),
     ("ME WHEN THE", "HONDA CIVIC\nIS BLUE", "matt_thumbs_up.jpg"),
     ("ME WHEN THE", "HONDA CIVIC\nISN'T BLUE", "matt_thumbs_down.jpg"),
 ]

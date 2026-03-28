@@ -35,6 +35,15 @@ def connect():
     ws.connect()
 
 
+def disconnect():
+    global ws
+    if ws is not None:
+        ws.disconnect()
+        print("websocket was disconnected!")
+    else:
+        print("websocket was never connected... hopefully?")
+
+
 def get_source_transform(scene_name, source_name):
     global ws
     response = ws.call(
@@ -220,12 +229,3 @@ def disable_source(scene_name, source_name):
             sceneItemEnabled=False,
         )
     )
-
-
-def disconnect():
-    global ws
-    if ws is not None:
-        ws.disconnect()
-        print("websocket was disconnected!")
-    else:
-        print("websocket was never connected... hopefully?")
