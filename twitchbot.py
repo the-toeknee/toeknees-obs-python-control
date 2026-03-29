@@ -39,7 +39,7 @@ BOT_ID = "1351292067"  # The Account ID of the bot user...
 OWNER_ID = "27329615"  # Your personal User ID..
 
 START_TIME = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-CHAT_FILE_PREFIX = "chat_log"
+CHAT_FILE_PREFIX = "ChatLog/chat_log"
 CHAT_FILE = f"{CHAT_FILE_PREFIX}_{START_TIME}.txt"  # Date of chat timestamped with when da bot started.
 
 

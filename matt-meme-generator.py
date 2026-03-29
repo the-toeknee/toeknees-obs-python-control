@@ -29,15 +29,20 @@ source_bottom_text = "dynamic_meme_bottom_text"
 
 # Returns the latest chat log file in the directory.
 def get_latest_chat_log():
-    files = glob.glob("chat_log_*.txt")
+    files = glob.glob("ChatLog/chat_log_*.txt")
     if not files:
         return None
     return max(files, key=os.path.getctime)
 
 
 # Returns the full absolute path given a relative path of a file.
-def get_image_full_path(relative_path):
+def get_full_path(relative_path):
     return os.path.abspath(relative_path)
+
+
+# Returns the full absolute path to a matt image.
+def get_matt_image_path(matt_file):
+    return get_full_path("Matt/{}".format(matt_file))
 
 
 def enable_random_matt_meme():
@@ -54,7 +59,7 @@ def enable_random_matt_meme():
         matt_index = randint(0, len(MATT) - 1)
         # print(obssocket.get_source_transform(scene, source_image))
         obssocket.center(matt_scene, source_image)
-        obssocket.set_file(source_image, get_image_full_path(MATT[matt_index][2]))
+        obssocket.set_file(source_image, get_matt_image_path(MATT[matt_index][2]))
         obssocket.set_text(source_text_top, MATT[matt_index][0])
         obssocket.set_text(source_bottom_text, MATT[matt_index][1])
 
