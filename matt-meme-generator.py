@@ -66,7 +66,7 @@ def enable_random_matt_meme():
         obssocket.set_text(source_bottom_text, MATT[matt_index][1])
 
         obssocket.enable_source(overlay_scene, matt_scene)
-        time.sleep(10)
+        time.sleep(60)
         obssocket.disable_source(overlay_scene, matt_scene)
         # time.sleep(1)
     except KeyboardInterrupt:
@@ -78,7 +78,7 @@ def watch_for_matt():
     global MATT_HERE_TODAY
     # 1. Find the latest chat log file.
     latest_log = get_latest_chat_log()
-    latest_offset_log = "{}.offset".format(latest_log)
+    latest_offset_log = "{}.matt_offset".format(latest_log)
     if not latest_log:
         print("No chat log found.")
         return
@@ -101,4 +101,5 @@ def watch_for_matt():
                 enable_random_matt_meme()
 
 
+twitchio.utils.setup_logging(level=logging.INFO)
 watch_for_matt()

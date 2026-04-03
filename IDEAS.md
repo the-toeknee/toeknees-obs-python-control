@@ -11,8 +11,11 @@ An ideas doc where I can put notes for future implementation features, ideas, et
 - Move over timeout chatter functionality here so that if a mod gets timed out, they get their mod privileges back.
 - Toby Watch... Toby Watch
 - AI LLM reading chat and responding to me
-- Meme Generator over my camera
 - Single program to control everything.
+- Kamikaze channel redeem. Timeout yourself and someone else for 10 minutes. Play worms kamikaze sfx. 
+    - https://youtu.be/0D_Y_kJnpW4?si=GYfyxY99-u_M0v17&t=62
 
 ## Currently in progress or already done.
 - ~~Meme Generator for Matt.~~
+- ~~Meme Generator over my camera~~
+- ~~Twitch Bot~~

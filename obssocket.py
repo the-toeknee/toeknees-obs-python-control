@@ -1,7 +1,11 @@
 from obswebsocket import obsws, events, requests
+import logging
+
+LOGGER: logging.Logger = logging.getLogger("OBS-Socket")
 
 host = "localhost"
 port = 4455
+streamerbot_port = 4456
 # password = ""
 ws = None
 
@@ -44,8 +48,15 @@ def disconnect():
         print("websocket was never connected... hopefully?")
 
 
-def get_source_transform(scene_name, source_name):
+def get_source_transform(scene_name=None, source_name=str):
     global ws
+
+    if scene_name is None:
+        scene_name = get_scene_by_source_name(source_name)
+        if scene_name is None:
+            LOGGER.error(f"Source {source_name} not found in any scene.")
+            return None
+
     response = ws.call(
         requests.GetSceneItemId(sceneName=scene_name, sourceName=source_name)
     )
@@ -193,6 +204,17 @@ def set_file(source_name, file):
     )
 
 
+def get_scene_by_source_name(source_name):
+    global ws
+    response = ws.call(requests.GetSceneList())
+    for scene in response.datain["scenes"]:
+        response = ws.call(requests.GetSceneItemList(sceneName=scene["sceneName"]))
+        for source in response.datain["sceneItems"]:
+            if source["sourceName"] == source_name:
+                return scene["sceneName"]
+    return None
+
+
 def get_source_by_name(scene_name, source_name):
     global ws
     response = ws.call(requests.GetSceneItemList(sceneName=scene_name))
@@ -227,5 +249,15 @@ def disable_source(scene_name, source_name):
             sceneName=scene_name,
             sceneItemId=source_to_enable_scene_id,
             sceneItemEnabled=False,
+        )
+    )
+
+
+def play_sound_effect(sound_effect_file):
+    global ws
+    ws.call(
+        requests.TriggerMediaInputAction(
+            inputName=sound_effect_file,
+            mediaAction="OBS_WEBSOCKET_MEDIA_INPUT_ACTION_RESTART",
         )
     )
