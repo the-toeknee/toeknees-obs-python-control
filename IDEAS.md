@@ -11,6 +11,8 @@ An ideas doc where I can put notes for future implementation features, ideas, et
 - Move over timeout chatter functionality here so that if a mod gets timed out, they get their mod privileges back.
 - Toby Watch... Toby Watch
 - AI LLM reading chat and responding to me
+- Meme Generator over my camera
+- Single program to control everything.
 
 ## Currently in progress or already done.
 - ~~Meme Generator for Matt.~~
