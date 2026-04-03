@@ -18,6 +18,8 @@ MATT = [
     ("IM MATT", "I'M COOL", "matt.png"),
     ("ME WHEN THE", "HONDA CIVIC\nIS BLUE", "matt_thumbs_up.jpg"),
     ("ME WHEN THE", "HONDA CIVIC\nISN'T BLUE", "matt_thumbs_down.jpg"),
+    ("SAD", "MATT", "matt_sad.png"),
+    ("THE 3 STAGES", "OF MATT", "matt_matt_matt.png"),
 ]
 MATT_HERE_TODAY = False
 
