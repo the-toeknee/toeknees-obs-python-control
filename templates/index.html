@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dommy Mommy</title>
+</head>
+
+<body>
+    <div>
+        <h1> Dommmy Mommy </h1>
+        <div class="program-container">
+            <h2> Twitch Bot </h2>
+            <h3 id="twitch-bot-status"> Status: Running </h3>
+            <div class="program-buttons">
+                <button id="twitch-bot-start"> Start </button>
+                <button id="twitch-bot-stop"> Stop </button>
+                <button id="twitch-bot-restart"> Restart </button>
+            </div>
+            <div class="program-output">
+                <textarea id="twitch-bot-output"> Terminal Output </textarea>
+            </div>
+        </div>
+        <div class="program-container">
+            <h2> Tony Meme Generator </h2>
+            <h3 id="tony-meme-generator-status"> Status: Running </h3>
+            <div class="program-buttons">
+                <button id="tony-meme-generator-start"> Start </button>
+                <button id="tony-meme-generator-stop"> Stop </button>
+                <button id="tony-meme-generator-restart"> Restart </button>
+            </div>
+            <div class="program-output">
+                <textarea id="tony-meme-generator-output"> Terminal Output </textarea>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+</html>

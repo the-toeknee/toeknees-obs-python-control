@@ -37,6 +37,7 @@ async def set_and_enable_tony_meme(message_top, message_bottom):
         obssocket.connect()
         obssocket.set_text(source_text_top, message_top)
         obssocket.set_text(source_bottom_text, message_bottom)
+        # OBS Text to Speech idea
         LOGGER.info("Enabling Tony Meme!")
         obssocket.enable_source(overlay_scene, scene)
         obssocket.play_sound_effect(source_meme_enable_sfx)
@@ -63,6 +64,7 @@ async def watch_for_tony_meme():
     # 2. Read the latest chat log file.
     # 3. Watch for matt's username... which I forgot.
     # 4. If detected, we run set_and_enable_tony_meme().
+    # TODO: Fix bug where if program restarts, it reads all the old redeems of the day.
     LOGGER.info(f"Watching {latest_log}...")
     while True:
         for line in pygtail.Pygtail(

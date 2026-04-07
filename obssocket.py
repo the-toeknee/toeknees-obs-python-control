@@ -1,7 +1,9 @@
 from obswebsocket import obsws, events, requests
 import logging
+import twitchio
 
 LOGGER: logging.Logger = logging.getLogger("OBS-Socket")
+twitchio.utils.setup_logging(level=logging.INFO)
 
 host = "localhost"
 port = 4455
@@ -22,16 +24,16 @@ alignments["bottom-right"] = 10
 
 
 def on_event(message):
-    print("Got message {}".format(message))
+    LOGGER.debug("Got message {}".format(message))
 
 
 def on_switch(message):
-    print("You changed the scene to {}".format(message.getSceneName()))
+    LOGGER.debug("You changed the scene to {}".format(message.getSceneName()))
 
 
 def connect():
     global ws
-    print("Setting up websocket.")
+    LOGGER.info("Setting up websocket.")
     ws = obsws(host, port)
     ws.register(on_event)
     ws.register(on_switch, events.SwitchScenes)
@@ -43,9 +45,9 @@ def disconnect():
     global ws
     if ws is not None:
         ws.disconnect()
-        print("websocket was disconnected!")
+        LOGGER.info("websocket was disconnected!")
     else:
-        print("websocket was never connected... hopefully?")
+        LOGGER.info("websocket was never connected... hopefully?")
 
 
 def get_source_transform(scene_name=None, source_name=str):

@@ -14,6 +14,7 @@ An ideas doc where I can put notes for future implementation features, ideas, et
 - Single program to control everything.
 - Kamikaze channel redeem. Timeout yourself and someone else for 10 minutes. Play worms kamikaze sfx. 
     - https://youtu.be/0D_Y_kJnpW4?si=GYfyxY99-u_M0v17&t=62
+- Toilet Vtuber Character
 
 ## Currently in progress or already done.
 - ~~Meme Generator for Matt.~~

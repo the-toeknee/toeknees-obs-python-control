@@ -1,5 +1,20 @@
 # List of things I would like to do in this project.
 
+## 2026-04-06 | April 6, 2026
+
+Dommy Mommy
+
+1. ~~Set up Flask~~ 
+1. Establish control to other programs.
+
+    A. Import other programs into Dommy Mommy.
+
+        * Caveat: We would probably have to rewrite the other programs to be imported into Dommy Mommy. This may involve defining some class or abstract interface or something along those lines. 
+
+    B. Alternatively, we can just have Dommy Mommy call `python meme_generator.py` or `python tts_queue.py` or whatever.
+
+        * Caveat: Make sure that dommy mommy is running the programs in the python virtual environment.
+
 ## 2026-03-27 | March 27, 2026
 
 Meme Generator for Matt.

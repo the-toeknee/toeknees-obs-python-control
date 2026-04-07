@@ -10,6 +10,7 @@ import glob
 from random import randint
 
 LOGGER: logging.Logger = logging.getLogger("Matt-Meme-Generator")
+twitchio.utils.setup_logging(level=logging.INFO)
 
 # Make this
 
@@ -59,7 +60,7 @@ def enable_random_matt_meme():
         obssocket.connect()
 
         matt_index = randint(0, len(MATT) - 1)
-        # print(obssocket.get_source_transform(scene, source_image))
+        # LOGGER.info(obssocket.get_source_transform(scene, source_image))
         obssocket.center(matt_scene, source_image)
         obssocket.set_file(source_image, get_matt_image_path(MATT[matt_index][2]))
         obssocket.set_text(source_text_top, MATT[matt_index][0])
@@ -80,13 +81,13 @@ def watch_for_matt():
     latest_log = get_latest_chat_log()
     latest_offset_log = "{}.matt_offset".format(latest_log)
     if not latest_log:
-        print("No chat log found.")
+        LOGGER.info("No chat log found.")
         return
 
     # 2. Read the latest chat log file.
     # 3. Watch for matt's username... which I forgot.
     # 4. If detected, we run enable_random_matt_meme().
-    print(f"Watching {latest_log}...")
+    LOGGER.info(f"Watching {latest_log}...")
     while True:
         for line in pygtail.Pygtail(
             filename=latest_log,
@@ -101,5 +102,4 @@ def watch_for_matt():
                 enable_random_matt_meme()
 
 
-twitchio.utils.setup_logging(level=logging.INFO)
 watch_for_matt()
